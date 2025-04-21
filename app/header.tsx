@@ -15,7 +15,7 @@ export function Header() {
           className="rounded-full"
           priority
         />
-        <div>
+        <div className='space-y-1'>
           <div className="text-title" >
             Alberto Vildosola
           </div>

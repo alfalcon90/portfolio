@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 }
 
 
-const alpino = localFont({src: '../public/Supreme-Variable.woff2', variable: '--font-alpino', display: 'swap'});
+const satoshi = localFont({src: '../public/Satoshi-Variable.woff2', variable: '--font-satoshi', display: 'swap'});
 
 export default function RootLayout({
   children,
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${alpino.className} text-lg font-medium tracking-tight antialiased text-zinc-500 dark:text-zinc-400 bg-white dark:bg-zinc-950`}
+        className={`${satoshi.className} text-lg font-medium tracking-tight antialiased text-zinc-500 dark:text-zinc-400 bg-white dark:bg-zinc-950`}
       >
         <ThemeProvider
           enableSystem={true}
