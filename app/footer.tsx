@@ -37,7 +37,7 @@ function ThemeSwitch() {
 
   return (
     <AnimatedBackground
-      className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
+      className="pointer-events-none rounded-lg bg-zinc-50 dark:bg-zinc-800"
       defaultValue={theme}
       transition={{
         type: 'spring',
@@ -71,11 +71,11 @@ export function Footer() {
   return (
     <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
       <div className="flex items-center justify-between">
-        <TextLoop className="text-xs text-zinc-500">
+        <TextLoop className="text-xs">
           <span>© {new Date().getFullYear()} Alberto Vildosola.</span>
           <span>Made with&nbsp; ❤️ &nbsp;in Seattle, WA</span>
         </TextLoop>
-        <div className="text-xs text-zinc-400">
+        <div className="text-xs ">
           <ThemeSwitch />
         </div>
       </div>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
@@ -16,15 +16,8 @@ export const metadata: Metadata = {
   description: 'UX Design Engineer',
 }
 
-const geist = Geist({
-  variable: '--font-geist',
-  subsets: ['latin'],
-})
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+const alpino = localFont({src: '../public/Supreme-Variable.woff2', variable: '--font-alpino', display: 'swap'});
 
 export default function RootLayout({
   children,
@@ -34,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
+        className={`${alpino.className} text-lg font-medium tracking-tight antialiased text-zinc-500 dark:text-zinc-400 bg-white dark:bg-zinc-950`}
       >
         <ThemeProvider
           enableSystem={true}
@@ -42,7 +35,7 @@ export default function RootLayout({
           storageKey="theme"
           defaultTheme="system"
         >
-          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
+          <div className="flex min-h-screen w-full flex-col">
             <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
               <Header />
               {children}

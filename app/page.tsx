@@ -79,7 +79,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
             exit: { opacity: 0, transition: { duration: 0 } },
           }}
         >
-          <XIcon className="h-5 w-5 text-zinc-500" />
+          <XIcon className="h-5 w-5" />
         </MorphingDialogClose>
       </MorphingDialogContainer>
     </MorphingDialog>
@@ -97,7 +97,7 @@ function MagneticSocialLink({
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a
         href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full px-2.5 py-1 text-sm transition-colors duration-200  bg-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 hover:text-zinc-50 dark:hover:text-zinc-900 hover:bg-zinc-950 dark:hover:bg-white"
       >
         {children}
         <svg
@@ -132,23 +132,22 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <div className="flex-1 text-zinc-600 dark:text-zinc-400">
+        <div className="flex-1 ">
           <p>
           Hi there!
           </p> 
   
           <p>
-          I'm Alberto, a UX Design Engineer and founder of <a className='underline dark:text-zinc-300' href='https://about.tinytown.app'>Tinytown</a> based in Seattle, WA.
-          </p>
-          <br />
-          <p>
-          I've worked with a variety of companies, from startups like <a className='underline dark:text-zinc-300' href='https://www.quilt.com/'>Quilt</a>, and <a className='underline dark:text-zinc-300' href='https://home.nest.com/'>Nest</a> to large companies like <a className='underline dark:text-zinc-300' href='https://google.com'>Google</a>, and have experience in both design and engineering. I love to create products that are not only functional but also beautiful and enjoyable to use.
+          I'm Alberto, a UX Design Engineer and founder of <a href='https://about.tinytown.app'>Tinytown</a> based in Seattle, WA.
           </p>
           <br />
           <p>
           I like software with a point of view — software that takes a stand, that isn't afraid to pick a side. Software that makes you feel things. Not like crying-in-the-shower things, but the good kind — like ‘wow, I’m part of something cool’ things.
           </p>
-   
+          <br />
+          <p>
+          I've worked with a variety of companies, from startups like <a href='https://www.quilt.com/'>Quilt</a>, and <a href='https://home.nest.com/'>Nest</a> to large companies like <a href='https://google.com'>Google</a>, and have extensive experience in both design and engineering. I love to create products that are not only functional but also beautiful and enjoyable to use.
+          </p>
         </div>
       </motion.section>
 
@@ -156,23 +155,23 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
+        <h3 className="mb-5 text-title">Selected Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
+                
               </div>
               <div className="px-1">
                 <a
-                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+                  className="text-subtitle group relative inline-block"
                   href={project.link}
                   target="_blank"
                 >
                   {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"></span>
+                  <span className="absolute bottom-0.5 left-0 block h-[2px] w-full max-w-0 bg-zinc-900 dark:bg-white transition-all duration-200 group-hover:max-w-full"></span>
                 </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
+                <p className="text-base">
                   {project.description}
                 </p>
               </div>
@@ -185,13 +184,11 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
+        <h3 className="mb-5 text-title">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
-            <a
+            <div
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
-              target="_blank"
               rel="noopener noreferrer"
               key={job.id}
             >
@@ -202,19 +199,19 @@ export default function Personal() {
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
-                    </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
+                    <h4 className="text-zinc-900 dark:text-zinc-100">
                       {job.company}
+                    </h4>
+                    <p className="text-base">
+                      {job.title}
                     </p>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  <p className="text-overline">
                     {job.start} - {job.end}
                   </p>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </motion.section>
@@ -223,10 +220,10 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Connect</h3>
-        <p className="mb-5 text-zinc-600 dark:text-zinc-400">
+        <h3 className="mb-5 text-title">Connect</h3>
+        <p className="mb-5">
           Feel free to contact me at{' '}
-          <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
+          <a href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
         </p>

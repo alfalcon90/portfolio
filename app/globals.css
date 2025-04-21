@@ -18,4 +18,22 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  p {
+    a {
+      @apply underline dark:text-zinc-300 text-zinc-900;
+    }
+  }
+}
+
+@utility text-title {
+  @apply text-xl font-bold text-zinc-900 dark:text-zinc-100;
+}
+
+@utility text-subtitle {
+  @apply text-lg font-semibold text-zinc-900 dark:text-zinc-100;
+}
+
+@utility text-overline {
+  @apply uppercase text-sm font-bold;
 }

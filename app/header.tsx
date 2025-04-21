@@ -6,7 +6,7 @@ import Image from 'next/image'
 export function Header() {
   return (
     <header className="mb-8 flex items-center justify-between">
-      <div className='flex items-center space-x-3'>
+      <Link href="/" className='flex items-center space-x-3'>
         <Image
           src="/me.jpg"
           alt="Alberto Vildosola"
@@ -16,20 +16,20 @@ export function Header() {
           priority
         />
         <div>
-          <Link href="/" className="font-medium text-black dark:text-white">
+          <div className="text-title" >
             Alberto Vildosola
-          </Link>
+          </div>
           <TextEffect
             as="p"
             preset="fade"
             per="char"
-            className="text-zinc-600 dark:text-zinc-500"
+            className="text-overline"
             delay={0.5}
           >
-            Design + Engineering
+            UX Design Engineer
           </TextEffect>
         </div>
-      </div>
+      </Link>
     </header>
   )
 }
