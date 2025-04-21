@@ -2,7 +2,6 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
   id: string
 }
 
@@ -11,7 +10,6 @@ type WorkExperience = {
   title: string
   start: string
   end: string
-  link: string
   id: string
 }
 
@@ -29,48 +27,101 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Motion Primitives Pro',
-    description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
-    id: 'project1',
+    name: 'Tinytown',
+    description: 'Hyperlocal chat app for neighbors.',
+    link: '/project/tinytown',
+    id: 'tinytown',
   },
   {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
-    id: 'project2',
+    name: 'Gmail',
+    description: 'Email from Google.',
+    link: '/projects/gmail',
+    id: 'gmail',
+  },
+  {
+    name: 'TaxCredit.ai',
+    description: 'AI for R&D Tax Credits.',
+    link: '/projects/taxcredit',
+    id: 'taxcredit',
+  },
+  {
+    name: 'Quilt',
+    description: 'Next-generation heat pump.',
+    link: '/projects/quilt',
+    id: 'quilt',
+  },
+  {
+    name: 'Google Keep',
+    description: 'Digital notes, accessible from anywhere.',
+    link: '/projects/google-keep',
+    id: 'google-keep',
+  },
+  {
+    name: 'Nest',
+    description: 'Thoughtful home products.',
+    link: '/projects/nest',
+    id: 'nest',
+  },
+  {
+    name: 'Passpaw',
+    description: 'Painless pet travel compliance.',
+    link: '/projects/passpaw',
+    id: 'passpaw',
+  },
+  {
+    name: 'SpeechBubbles',
+    description: 'Acceptance-first speech therapy.',
+    link: '/projects/speechbubbles',
+    id: 'speechbubbles',
+  },
+  {
+    name: 'Crescendo',
+    description: 'Performance consulting. ',
+    link: '/projects/crescendo',
+    id: 'crescendo',
+  },
+  {
+    name: 'Zagaran',
+    description: 'Software development experts.',
+    link: '/projects/zagaran',
+    id: 'zagaran',
+  },
+  {
+    name: 'Revolv',
+    description: 'Smart home awesomation.',
+    link: '/projects/revolv',
+    id: 'revolv',
   },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'Freelance',
+    title: 'UX Designer + Engineer',
+    start: '2020',
     end: 'Present',
-    link: 'https://ibelick.com',
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
+    company: 'Google',
+    title: 'Senior UX Designer',
+    start: '2016',
+    end: '2020',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
+    company: 'Nest',
+    title: 'UX Designer',
+    start: '2014',
+    end: '2016',
     id: 'work3',
+  },
+  {
+    company: 'Revolv',
+    title: 'UX Designer',
+    start: '2013',
+    end: '2014',
+    id: 'work4',
   },
 ]
 
@@ -98,4 +149,4 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
 ]
 
-export const EMAIL = 'contact@alberto.page'
+export const EMAIL = 'hello@alberto.page'
