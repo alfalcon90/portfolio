@@ -75,7 +75,7 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Alberto Vildosola.</span>
           <span>Made with&nbsp; ❤️ &nbsp;in Seattle, WA</span>
         </TextLoop>
-        <div className="text-xs ">
+        <div className="text-xs">
           <ThemeSwitch />
         </div>
       </div>

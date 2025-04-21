@@ -1,15 +1,7 @@
 'use client'
 import { motion } from 'motion/react'
-import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
-import {
-  MorphingDialog,
-  MorphingDialogTrigger,
-  MorphingDialogContent,
-  MorphingDialogClose,
-  MorphingDialogContainer,
-} from '@/components/ui/morphing-dialog'
 import { PROJECTS, WORK_EXPERIENCE, EMAIL, SOCIAL_LINKS } from './data'
 import Image from 'next/image'
 
@@ -30,56 +22,6 @@ const VARIANTS_SECTION = {
 
 const TRANSITION_SECTION = {
   duration: 0.3,
-}
-
-type ProjectVideoProps = {
-  src: string
-}
-
-function ProjectVideo({ src }: ProjectVideoProps) {
-  return (
-    <MorphingDialog
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.3,
-      }}
-    >
-      <MorphingDialogTrigger>
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
-        />
-      </MorphingDialogTrigger>
-      <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <video
-            src={src}
-            autoPlay
-            loop
-            muted
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
-          />
-        </MorphingDialogContent>
-        <MorphingDialogClose
-          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
-          variants={{
-            initial: { opacity: 0 },
-            animate: {
-              opacity: 1,
-              transition: { delay: 0.3, duration: 0.1 },
-            },
-            exit: { opacity: 0, transition: { duration: 0 } },
-          }}
-        >
-          <XIcon className="h-5 w-5" />
-        </MorphingDialogClose>
-      </MorphingDialogContainer>
-    </MorphingDialog>
-  )
 }
 
 function MagneticSocialLink({
@@ -167,15 +109,14 @@ export default function Personal() {
               href={project.link}
               target="_blank"
               key={project.name}
-              className="space-y-2 group relative text-center"
+              className="group relative space-y-2 text-center"
             >
-              <div className="relative rounded-2xl  p-1 ring-2 ring-zinc-200/50 ring-inset dark:ring-zinc-800/50">
+              <div className="relative h-[160px] rounded-2xl p-1 ring-2 ring-zinc-200/50 ring-inset dark:ring-zinc-800/50">
                 <Image
                   src={project.image}
                   alt={project.name}
-                  
-                  width={300}
-                  height={300}
+                  style={{ objectFit: 'none', height: '100%' }}
+                  fill
                 />
               </div>
               <div className="px-1">

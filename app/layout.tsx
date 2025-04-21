@@ -16,8 +16,11 @@ export const metadata: Metadata = {
   description: 'Product Designer, Engineer. Founder of Tinytown',
 }
 
-
-const satoshi = localFont({src: '../public/fonts/Satoshi-Variable.woff2', variable: '--font-satoshi', display: 'swap'});
+const satoshi = localFont({
+  src: '../public/fonts/Satoshi-Variable.woff2',
+  variable: '--font-satoshi',
+  display: 'swap',
+})
 
 export default function RootLayout({
   children,
@@ -27,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${satoshi.className} text-lg font-medium tracking-tight antialiased text-zinc-500 dark:text-zinc-400 bg-white dark:bg-zinc-950`}
+        className={`${satoshi.className} bg-white text-lg font-medium tracking-tight text-zinc-500 antialiased dark:bg-zinc-950 dark:text-zinc-400`}
       >
         <ThemeProvider
           enableSystem={true}

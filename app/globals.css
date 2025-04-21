@@ -21,21 +21,19 @@
 
   p {
     a {
-      @apply underline dark:text-zinc-300 text-zinc-900;
+      @apply text-zinc-900 underline dark:text-zinc-300;
     }
   }
 
   .text-title {
     @apply text-2xl font-bold text-zinc-900 dark:text-zinc-100;
   }
-  
+
   .text-subtitle {
     @apply text-xl font-semibold text-zinc-900 dark:text-zinc-100;
   }
-  
+
   .text-overline {
-    @apply uppercase text-xs font-extrabold;
+    @apply text-xs font-extrabold uppercase;
   }
 }
-
-
