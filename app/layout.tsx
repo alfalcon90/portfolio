@@ -13,11 +13,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Alberto Vildosola',
-  description: 'UX Design Engineer',
+  description: 'Product Designer, Engineer. Founder of Tinytown',
 }
 
 
-const satoshi = localFont({src: '../public/Satoshi-Variable.woff2', variable: '--font-satoshi', display: 'swap'});
+const satoshi = localFont({src: '../public/fonts/Satoshi-Variable.woff2', variable: '--font-satoshi', display: 'swap'});
 
 export default function RootLayout({
   children,

@@ -1,6 +1,7 @@
 type Project = {
   name: string
   description: string
+  image: string
   link: string
   id: string
 }
@@ -29,66 +30,77 @@ export const PROJECTS: Project[] = [
   {
     name: 'Tinytown',
     description: 'Hyperlocal chat app for neighbors.',
+    image: '/tiles/tinytown.svg',
     link: '/project/tinytown',
     id: 'tinytown',
   },
   {
     name: 'Gmail',
     description: 'Email from Google.',
+    image: '/tiles/gmail.svg',
     link: '/projects/gmail',
     id: 'gmail',
   },
   {
     name: 'TaxCredit.ai',
     description: 'AI for R&D Tax Credits.',
+    image: '/tiles/taxcredit.svg',
     link: '/projects/taxcredit',
     id: 'taxcredit',
   },
   {
     name: 'Quilt',
     description: 'Next-generation heat pump.',
+    image: '/tiles/quilt.svg',
     link: '/projects/quilt',
     id: 'quilt',
   },
   {
     name: 'Google Keep',
     description: 'Digital notes, accessible from anywhere.',
+    image: '/tiles/keep.svg',
     link: '/projects/google-keep',
     id: 'google-keep',
   },
   {
     name: 'Nest',
     description: 'Thoughtful home products.',
+    image: '/tiles/nest.svg',
     link: '/projects/nest',
     id: 'nest',
   },
   {
     name: 'Passpaw',
     description: 'Painless pet travel compliance.',
+    image: '/tiles/passpaw.svg',
     link: '/projects/passpaw',
     id: 'passpaw',
   },
   {
     name: 'SpeechBubbles',
     description: 'Acceptance-first speech therapy.',
+    image: '/tiles/speechbubbles.svg',
     link: '/projects/speechbubbles',
     id: 'speechbubbles',
   },
   {
     name: 'Crescendo',
     description: 'Performance consulting. ',
+    image: '/tiles/crescendo.svg',
     link: '/projects/crescendo',
     id: 'crescendo',
   },
   {
     name: 'Zagaran',
     description: 'Software development experts.',
+    image: '/tiles/zagaran.svg',
     link: '/projects/zagaran',
     id: 'zagaran',
   },
   {
     name: 'Revolv',
     description: 'Smart home awesomation.',
+    image: '/tiles/revolv.svg',
     link: '/projects/revolv',
     id: 'revolv',
   },

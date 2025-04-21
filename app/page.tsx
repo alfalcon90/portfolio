@@ -10,12 +10,8 @@ import {
   MorphingDialogClose,
   MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
-import {
-  PROJECTS,
-  WORK_EXPERIENCE,
-  EMAIL,
-  SOCIAL_LINKS,
-} from './data'
+import { PROJECTS, WORK_EXPERIENCE, EMAIL, SOCIAL_LINKS } from './data'
+import Image from 'next/image'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -97,7 +93,7 @@ function MagneticSocialLink({
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a
         href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full px-2.5 py-1 text-sm transition-colors duration-200  bg-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 hover:text-zinc-50 dark:hover:text-zinc-900 hover:bg-zinc-950 dark:hover:bg-white"
+        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-50 px-2.5 py-1 text-sm transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-white dark:hover:text-zinc-900"
       >
         {children}
         <svg
@@ -132,21 +128,30 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <div className="flex-1 ">
+        <div className="flex-1">
+          <p>Hi there!</p>
+
           <p>
-          Hi there!
-          </p> 
-  
-          <p>
-          I'm Alberto, a UX Design Engineer and founder of <a href='https://about.tinytown.app'>Tinytown</a> based in Seattle, WA.
+            I'm Alberto, a UX Design Engineer and founder of{' '}
+            <a href="https://about.tinytown.app">Tinytown</a> based in Seattle,
+            WA.
           </p>
           <br />
           <p>
-          I like software with a point of view — software that takes a stand, that isn't afraid to pick a side. Software that makes you feel things. Not like crying-in-the-shower things, but the good kind — like ‘wow, I’m part of something cool’ things.
+            I like software with a point of view — software that takes a stand,
+            that isn't afraid to pick a side. Software that makes you feel
+            things. Not like crying-in-the-shower things, but the good kind —
+            like ‘wow, I’m part of something cool’ things.
           </p>
           <br />
           <p>
-          I've worked with a variety of companies, from startups like <a href='https://www.quilt.com/'>Quilt</a>, and <a href='https://home.nest.com/'>Nest</a> to large companies like <a href='https://google.com'>Google</a>, and have extensive experience in both design and engineering. I love to create products that are not only functional but also beautiful and enjoyable to use.
+            I've worked with a variety of companies, from startups like{' '}
+            <a href="https://www.quilt.com/">Quilt</a>, and{' '}
+            <a href="https://home.nest.com/">Nest</a> to large companies like{' '}
+            <a href="https://google.com">Google</a>, and have extensive
+            experience in both design and engineering. I love to create products
+            that are not only functional but also beautiful and enjoyable to
+            use.
           </p>
         </div>
       </motion.section>
@@ -155,27 +160,32 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-title">Selected Projects</h3>
+        <h3 className="text-title mb-5">Selected Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                
+            <a
+              href={project.link}
+              target="_blank"
+              key={project.name}
+              className="space-y-2 group relative text-center"
+            >
+              <div className="relative rounded-2xl  p-1 ring-2 ring-zinc-200/50 ring-inset dark:ring-zinc-800/50">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  
+                  width={300}
+                  height={300}
+                />
               </div>
               <div className="px-1">
-                <a
-                  className="text-subtitle group relative inline-block"
-                  href={project.link}
-                  target="_blank"
-                >
+                <div className="text-subtitle group relative inline-block">
                   {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[2px] w-full max-w-0 bg-zinc-900 dark:bg-white transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
-                <p className="text-base">
-                  {project.description}
-                </p>
+                  <span className="absolute bottom-0.5 left-0 block h-[2px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-white"></span>
+                </div>
+                <p className="text-base">{project.description}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </motion.section>
@@ -184,7 +194,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-title">Work Experience</h3>
+        <h3 className="text-title mb-5">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
             <div
@@ -202,9 +212,7 @@ export default function Personal() {
                     <h4 className="text-zinc-900 dark:text-zinc-100">
                       {job.company}
                     </h4>
-                    <p className="text-base">
-                      {job.title}
-                    </p>
+                    <p className="text-base">{job.title}</p>
                   </div>
                   <p className="text-overline">
                     {job.start} - {job.end}
@@ -220,12 +228,9 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-title">Connect</h3>
+        <h3 className="text-title mb-5">Connect</h3>
         <p className="mb-5">
-          Feel free to contact me at{' '}
-          <a href={`mailto:${EMAIL}`}>
-            {EMAIL}
-          </a>
+          Feel free to contact me at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </p>
         <div className="flex items-center justify-start space-x-3">
           {SOCIAL_LINKS.map((link) => (
