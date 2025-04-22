@@ -14,7 +14,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     }: {
       src: string
       alt: string
-      caption: string
+      caption?: string
       width?: number
       height?: number
     }) => {
@@ -50,6 +50,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     TwoColumnImage: ({
       src,
+      alt,
       title,
       description,
       width = 800,
@@ -57,6 +58,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       side = 'left',
     }: {
       src: string
+      alt: string
       title: string
       description: string
       width?: number
@@ -69,7 +71,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         >
           <Image
             src={src}
-            alt={description}
+            alt={alt}
             width={width}
             height={height}
             className="w-1/2 rounded-xl border-zinc-400/30 md:rounded-[40px] md:border-2"

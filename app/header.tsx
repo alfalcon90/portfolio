@@ -9,7 +9,7 @@ export function Header() {
       <Link href="/" className="flex items-center space-x-3">
         <Image
           src="/me.jpg"
-          alt="Alberto Vildosola"
+          alt="Black and white photo of me, Alberto Vildosola"
           width={64}
           height={64}
           className="rounded-full"
