@@ -107,7 +107,6 @@ export default function Personal() {
           {PROJECTS.map((project) => (
             <a
               href={project.link}
-              target="_blank"
               key={project.name}
               className="group relative space-y-2 text-center"
             >
