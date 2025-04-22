@@ -39,7 +39,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           <span className="text-lg text-zinc-900 dark:text-zinc-100">
             {title}
           </span>
-          <div className="mx-4 mt-[16px] h-[1px] flex-grow bg-zinc-400/50" />
+          <div className="mx-4 mt-[16px] h-[1px] flex-grow bg-zinc-400/30" />
           <span
             className={`${link ? '' : 'text-overline mt-[8px]'} max-w-64 text-right`}
           >
@@ -65,16 +65,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     }) => {
       return (
         <div
-          className={`my-4 flex flex-row justify-between gap-6 ${side === 'left' ? '' : 'flex-row-reverse'}`}
+          className={`flex items-center text-center md:my-4 md:items-start md:justify-between md:gap-6 md:text-left ${side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col`}
         >
           <Image
             src={src}
             alt={description}
             width={width}
             height={height}
-            className="w-1/2 rounded-[40px]"
+            className="w-1/2 rounded-xl border-zinc-400/30 md:rounded-[40px] md:border-2"
           />
-          <div className="mt-32 flex flex-col">
+          <div className="mb-8 flex flex-col md:mt-32">
             <span className="text-lg font-bold">{title}</span>
             <span className="">{description}</span>
           </div>

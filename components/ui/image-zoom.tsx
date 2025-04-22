@@ -41,7 +41,7 @@ export function ImageZoom({ src, alt, width, height }: ImageZoomProps) {
             alt={alt}
             width={width}
             height={height}
-            className=" rounded-xl"
+            className="rounded-xl"
           />
         </MorphingDialogContent>
         <MorphingDialogClose
